@@ -290,7 +290,7 @@ class AddOp(UserOperation):
 		repayment_date = self.repayment_date.GetValue()
 		# print(repayment_date)
 		# amount_due = self.amount_due.GetValue()
-		amount_due = float(total_amount) - float(used_amount)
+		amount_due = used_amount
 		# print(amount_due)
 		np = op.Insert(total_amount,institution_name,used_amount,balance,repayment_date,amount_due)
 
