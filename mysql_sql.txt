@@ -1,0 +1,22 @@
+mysql> create database login_users;
+
+mysql> use login_users;
+mysql> create table money_info(
+    -> id int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '编号',
+    -> total_amount bigint(20) unsigned NOT NULL COMMENT '总金额',
+    -> institution_name varchar(32) NOT NULL COMMENT '机构名称',
+    -> used_amount bigint(20) unsigned NOT NULL COMMENT '已用金额',
+    -> balance bigint(20) unsigned NOT NULL COMMENT '剩余金额',
+    -> repayment_date char(20) NOT NULL COMMENT '还款日期',
+    -> amount_due bigint(20) unsigned NOT NULL COMMENT '应还金额',
+    -> primary key(id)
+    -> )default charset=utf8;
+
+
+mysql> create table users(
+    -> id int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '用户id',
+    -> user_name varchar(32) NOT NULL COMMENT '用户名',
+    -> user_password varchar(32) NOT NULL COMMENT '登陆密码',
+    -> primary key(id),
+    -> unique key(user_name)
+    -> )default charset=utf8;
